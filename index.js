@@ -13,10 +13,10 @@ const axios = require('axios')
 const {getYoutubeVideoDataJson} = require('./getYoutubeVideo')
 let top10VideoJson =  {status: "not available"}
 
-getYoutubeVideoDataJson('nba top 10').then(data => top10VideoJson = data).catch(err => console.log(err))
-setInterval(() => {
-    getYoutubeVideoDataJson('nba top 10').then(data => top10VideoJson = data).catch(err => console.log(err))
-}, 60*60*1000)
+// getYoutubeVideoDataJson('nba top 10').then(data => top10VideoJson = data).catch(err => console.log(err))
+// setInterval(() => {
+//     getYoutubeVideoDataJson('nba top 10').then(data => top10VideoJson = data).catch(err => console.log(err))
+// }, 60*60*1000)
 
 
 dotenv.config()
@@ -44,8 +44,8 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '/frontend/koko/index.html'))
 })
 app.get('/api/top10plays', verifyToken, (req, res) => {
-    res.json({top10VideoJson})
-    
+    getYoutubeVideoDataJson('nba top 10').then(data => res.json(data)).catch(err => console.log(err))
+    //res.json({top10VideoJson})
 } )
 
 

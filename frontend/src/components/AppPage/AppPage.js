@@ -3,43 +3,11 @@ import './appPage.scss'
 import TopPlays from './TopPlays'
 import Standings from './Standings'
 import jwt from 'jsonwebtoken'
-import axios from 'axios'
 import SvgIcon from "../Icons/SvgIcon";
 import Scores from './Scores'
 
 const App = (props) => {
     const [activeComponent, setActiveComponent] = useState('scores')
-
-    const [videoUrl, setVideoUrl] = useState('')
-    const [videoTitle, setVideoTitle] = useState('')
-    const [videoImage, setVideoImage] = useState('')
-    const [searchValue, setSearchValue] = useState('')
-
-    useEffect(() => {
-        let token = localStorage.getItem('b')
-        console.log('use effect ', token)
-        axios({
-            method: 'get',
-            url:'/api/top10plays',
-            headers: {
-                'auth-token': token
-            }
-        })
-            .then(res => {
-                setVideoUrl(res.data.top10VideoJson.url)
-                setVideoTitle(res.data.top10VideoJson.title)  
-                setVideoImage(res.data.top10VideoJson.image)
-            })
-            .catch(err => {
-                location.reload();
-            })
-        return () => {
-            null
-        };
-    }, [])
-
-
-
 
 
     const changeComponent = (e) => {
@@ -101,7 +69,7 @@ const App = (props) => {
             </nav>
             {activeComponent === 'scores' && <Scores />}
             {activeComponent === 'standings' && <Standings />}
-            {activeComponent === 'top10' && <TopPlays videoImage={videoImage} videoTitle={videoTitle} videoUrl={videoUrl}/>}
+            {activeComponent === 'top10' && <TopPlays />}
             <footer>
                 Made by Rafal
             </footer>
