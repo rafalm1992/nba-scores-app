@@ -1,0 +1,46 @@
+.inputElement{  
+    height: 56px;
+    width: 360px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: #fff;
+    margin: 5px 0 5px 0;
+    border: 1px solid rgba(0,5,5,0.3);  
+    border-radius: 6px;
+
+    &--error{
+        border: 1px dashed rgba(255,0,0,0.2);
+        input{
+            color: #c40101;
+        }
+    }
+
+    input{
+        border: none;
+        height: 50px;
+        width: 100%;
+        background: transparent;
+        margin: 10px 10px 10px 15px;
+        font-weight: 300;
+    }
+    
+    input:focus {
+        outline: none;
+    }
+    
+    .svgIcon{
+        height:18px;
+        width: 18px;
+        margin:10px 0px 10px 20px;
+    }
+
+}
+.inputElementErrorMessage{
+    margin: 0;
+    font-size: 0.7rem;
+    text-decoration-line: none;
+    cursor: none;
+    color: #ff0000;
+}

@@ -1,0 +1,56 @@
+.authPage{
+    //background: url('../../assets/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-color: #0b0f27;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.authPage__Container{
+    height: 100%;
+    width: 100%;
+    background: rgba(255,255,255,0.9);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    h1{
+        font-size: 3em;
+        color: rgb(77, 48, 48);
+    }
+
+    @media screen and (min-width: 968px){
+        width: 40%;
+        max-width: 500px;
+        align-self: flex-start;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.authPage__AppLogo{
+    width: 364px;
+}
+
+h1,h2,h3,p, span {
+    margin: 5px 0 5px 0;
+    line-height: 1;
+    font-weight: 200;
+    font-family: 'Poppins', sans-serif;
+}
+.registrationForm_BottomText, .loginForm__BottomText, .forgottenAccountForm_BottomText{ 
+    display: flex;
+    justify-content: space-between;
+
+    span{
+        font-size: 1rem;
+        text-decoration-line: underline;
+        cursor: pointer;
+        color: #0b0f27;
+    }
+}
+
