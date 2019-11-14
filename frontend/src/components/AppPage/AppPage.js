@@ -6,12 +6,26 @@ import Standings from './Standings'
 import jwt from 'jsonwebtoken'
 import SvgIcon from "../Icons/SvgIcon";
 import Scores from './Scores'
+import axios from 'axios'
 
 const App = (props) => {
     const [activeComponent, setActiveComponent] = useState('scores')
     const [name, setName] = useState('')
+    const [videoId, setVideoId] = useState('')
 
-
+    useEffect(() => {
+        const token = localStorage.getItem('b')
+        axios({
+            method: 'get',
+            url: '/api/top10plays',
+            headers: {
+                'auth-token': token
+            }
+        })
+        .then(data => setVideoId(data.data.data.videoId))
+        .catch(err => console.log(err))
+    }, [])
+    
     const changeComponent = (e) => {
         let component = e.target.attributes.getNamedItem('data-name').value
         setActiveComponent(component)
@@ -72,7 +86,7 @@ const App = (props) => {
             </nav>
             {activeComponent === 'scores' && <Scores />}
             {activeComponent === 'standings' && <Standings />}
-            {activeComponent === 'top10' && <TopPlays />}
+            {activeComponent === 'top10' && <TopPlays videoId={videoId}/>}
             <br/>
             <br/>
             <footer>

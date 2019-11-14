@@ -6,6 +6,7 @@ import RegisterForm from './Forms/RegisterForm'
 import ForgottenPasswordForm from './Forms/ForgottenPasswordForm'
 
 
+
 const AuthPage = (props) => {
     const [activeComponent, setActiveComponent] = useState('login')
 
