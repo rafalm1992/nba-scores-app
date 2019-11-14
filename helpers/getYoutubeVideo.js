@@ -2,7 +2,10 @@ const puppeteer = require('puppeteer')
 
 const getYoutubeVideoDataJson = (query) => {
     return new Promise( async(resolve, reject) => {
-            const browser = await puppeteer.launch({headless: true });
+            const browser = await puppeteer.launch({headless: true,   'args' : [
+              '--no-sandbox',
+              '--disable-setuid-sandbox'
+            ]});
             const page = await browser.newPage();
             await page.goto('https://www.youtube.com/');
             await page.type('input#search', query)
