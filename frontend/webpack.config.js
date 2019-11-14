@@ -7,7 +7,7 @@ module.exports = {
     entry: "./src/index.js",
     output: {
         filename: "build.js",
-        path: path.resolve(__dirname, 'koko')
+        path: path.resolve(__dirname, 'dist')
     },
     module: {
         rules: [

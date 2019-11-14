@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import './appPage.scss'
+import '../Dashboard/dashboard.scss'
 import TopPlays from './TopPlays'
 import Standings from './Standings'
 import jwt from 'jsonwebtoken'
@@ -8,10 +9,10 @@ import Scores from './Scores'
 
 const App = (props) => {
     const [activeComponent, setActiveComponent] = useState('scores')
+    const [name, setName] = useState('')
 
 
     const changeComponent = (e) => {
-        e.target.attributes.class = "zdarova"
         let component = e.target.attributes.getNamedItem('data-name').value
         setActiveComponent(component)
     }
@@ -34,6 +35,7 @@ const App = (props) => {
         console.log("5678".toHHMMSS());
         console.log('fetching data')
         let token = jwt.decode(localStorage.getItem('b'))
+        setName(token.name)
         let tokenWillExpireInSeconds = (token.exp - Math.round(+new Date()/1000))
         var timeleft = tokenWillExpireInSeconds
 
@@ -53,13 +55,14 @@ const App = (props) => {
     return(
         <div className="appPage">
             <nav className="appPage__NavigationContainer">
+                <h3>Welcome, {name}</h3>
                 <div className="appPage__LogoAndLogout">
                     <h1>NBA</h1>
                     <div className="navContainer__LogoutButton" onClick={handleLogout}>
                         <SvgIcon icon={"logout"} />
                         <span>Logout</span>
                     </div>
-                    <span id="countdown"></span>
+                    
                 </div>
                 <div className="appPage__NavigationList">
                     <span data-name="scores" onClick={changeComponent} className={activeComponent === 'scores' && "active"}>Scores </span> / <span data-name="standings" onClick={changeComponent} className={activeComponent === 'standings' && "active"}> Standings </span> / <span data-name="top10" onClick={changeComponent} className={activeComponent === 'top10' && "active"}>Top10</span>
@@ -70,8 +73,11 @@ const App = (props) => {
             {activeComponent === 'scores' && <Scores />}
             {activeComponent === 'standings' && <Standings />}
             {activeComponent === 'top10' && <TopPlays />}
+            <br/>
+            <br/>
             <footer>
-                Made by Rafal
+                <span>Made by Rafal</span>
+                <span id="countdown"></span>
             </footer>
         </div>
     )

@@ -4,8 +4,8 @@ import './inputElement.scss'
 
 const InputElement = props => {
   let styleClass;
-  if (props.error) {
-    styleClass = "inputElement inputElement--error";
+  if (props.errorMessage) {
+    styleClass = "inputElement";
   } else {
     styleClass = "inputElement";
   }
@@ -14,10 +14,9 @@ const InputElement = props => {
     <div className={styleClass}>
       <SvgIcon className={"svgIcon"} icon={props.icon} error={props.error}/>
       <input
-        pattern={props.pattern}
-        minLength={props.minLength}
         required={props.required}
         type={props.type}
+        name={props.name}
         placeholder={props.placeholder}
         value={props.value}
         onChange={props.onChange}

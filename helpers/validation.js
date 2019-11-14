@@ -15,5 +15,12 @@ const loginValidation = (data)=>{
     }
     return Joi.validate(data, schema)
 }
+const forgottenPasswordValidation = (data) => {
+    const schema = {
+        email: Joi.string().min(6).max(255).required().email(),
+    }
+    return Joi.validate(data, schema)
+}
 
-module.exports = {registerValidation, loginValidation}
+
+module.exports = {registerValidation, loginValidation, forgottenPasswordValidation}

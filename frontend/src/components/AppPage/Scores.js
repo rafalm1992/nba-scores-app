@@ -3,10 +3,6 @@ import axios from 'axios'
 import './AppPage.scss'
 
 const Scores = (props) => {
-    const [awayScore, setAwayScore] = useState('')
-    const [awayTricode, setAwayTricode] = useState('')
-    const [homeScore, setHomeScore] = useState('')
-    const [homeTricode, setHomeTricode] = useState('')
     const [feed, setFeed] = useState([])
     const [date, setDate] = useState('')
 
@@ -33,13 +29,13 @@ const Scores = (props) => {
     }, [])
 
 
-
   return (
       <div className="scoreBoard">
         <h1 className="container__title">Scores</h1>
+        {!date ? <div className="spinner"></div> : ''}
         {date && <div className="scoreBoard__CurrentDay"><h3>Scores for November {date.slice(-2)[0] === '0' ? date.slice(-1):date.slice(-2)}, {date.slice(0, 4)}</h3></div>}
         {feed.map(game => {
-            return <GameBoard awayTricode={game.vTeam.triCode} awayScore={game.vTeam.score} homeTricode={game.hTeam.triCode} homeScore={game.hTeam.score}/>
+            return <GameBoard gameId={game.gameId} gameDate={game.startDateEastern} awayTeamId={game.vTeam.teamId} awayTricode={game.vTeam.triCode} awayScore={game.vTeam.score} homeTeamId={game.hTeam.teamId} homeTricode={game.hTeam.triCode} homeScore={game.hTeam.score}/>
         })} 
         {!feed && <h1>no feed</h1>}
        
@@ -49,10 +45,10 @@ const Scores = (props) => {
 }
 
 const GameBoard = (props) => {
-    console.log(props)
+    
     return (
         <div className="gameBoard">
-            <div className="gameBoard__container">
+            <div className="gameBoard__container" >
                 <div className="gameBoard__side">
 
                     

@@ -50,24 +50,7 @@ $headerElementPadding: 13px;
   }
 }
 
-.navContainer__LogoutButton {
-  cursor: pointer;
-  height: 31px;
-  width: 90px;
-  transition: 0.3s all;
-    @include flexRowCenterSpaceAround();
-    justify-content: center;
-  &:hover {
-    background: #99cc33;
-    transition: 0.3s all;
-  }
-  & span {
-    margin-left: 8px;
-    margin-right: 8px;
-    font-size: 14px;
-    color: #4b4d6b;
-  }
-}
+
 .mainContent {
   height: 100%;
   width: 100%;

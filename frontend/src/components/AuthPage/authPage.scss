@@ -34,6 +34,11 @@
 
 .authPage__AppLogo{
     width: 364px;
+    
+    img{
+        width: 364px;
+    }
+
 }
 
 h1,h2,h3,p, span {
@@ -54,3 +59,29 @@ h1,h2,h3,p, span {
     }
 }
 
+.loginFormError{
+    span{
+        margin: 0;
+        font-size: 0.7rem;
+        text-decoration-line: none;
+        cursor: none;
+        color: #ff0000;
+        font-family: 'Roboto', sans-serif;
+    }
+
+}
+.authPage__photoCredit{
+    display: none;
+}
+@media screen and (min-width: 968px){
+    .authPage__photoCredit{
+        display: block;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: rgba(255, 250, 240, 0.5);
+        border-radius: 5px;
+        font-family: 'Poppins', sans-serif;
+        padding: 5px;
+    }
+}

@@ -18,14 +18,14 @@ const TopPlays = (props) => {
             }
         })
             .then(res => {
-                console.log(res)
-                setVideoUrl(res.data.url)
-                setVideoTitle(res.data.title)  
-                setVideoImage(res.data.image)
+                console.log(res.data.data.title)
+                setVideoUrl(res.data.data.url)
+                setVideoTitle(res.data.data.title)  
+                setVideoImage(res.data.data.image)
             })
             .catch(err => {
                 console.log('top plays catch err', err)
-                //location.reload();
+                location.reload();
             })
         return () => {
             null
@@ -34,14 +34,15 @@ const TopPlays = (props) => {
 
     return(
         <div className="topPlaysContainer">
-            {!videoUrl ? <h1>Loading</h1> :
+            <h1 className="container__title">Top10 Plays</h1>
+            {!videoUrl ? <div className="spinner"></div> :
             <div className="topPlays">
-                <h1 className="container__title">Top10 Plays</h1>
                 <a href={videoUrl} target="_blank"><img src={videoImage}/></a>
                 <h3><a href={videoUrl} target="_blank">{videoTitle}</a></h3>
             </div>
             }
-        </div>
+            <iframe width="350" height="197" src="//www.youtube.com/embed/JH0miu8yLtE?rel=0&amp;controls=1&amp;showinfo=1&amp;cc_lang_pref=lt&amp;cc_load_policy=1" frameborder="0" allowFullScreen></iframe>
+          </div>
     )
 }
 

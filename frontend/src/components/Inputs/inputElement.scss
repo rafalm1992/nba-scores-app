@@ -9,6 +9,7 @@
     margin: 5px 0 5px 0;
     border: 1px solid rgba(0,5,5,0.3);  
     border-radius: 6px;
+    font-family: 'Roboto', sans-serif;
 
     &--error{
         border: 1px dashed rgba(255,0,0,0.2);
@@ -43,4 +44,5 @@
     text-decoration-line: none;
     cursor: none;
     color: #ff0000;
+    font-family: 'Roboto', sans-serif;
 }

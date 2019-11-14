@@ -1,16 +1,26 @@
+body{
+    margin: 0;
+    padding: 0;
+}
 .appPage{
     height: 100vh;
     width: 100%;
 
     footer{
-        max-width: 450px;
+        width: 100%;
         margin: 0 auto;
-        text-align: center;
         font-weight: 200;
         font-family: 'Poppins', sans-serif;
-        position: absolute;
+        position: fixed;
         bottom: 0;
+        background: #fff;
 
+        #countdown{
+            position: fixed;
+            right: 2px;
+            font-size: 1rem;
+            color: rgba($color: #000000, $alpha: 0.5)
+        }
     }
 
     h1{
@@ -69,9 +79,12 @@
     .navContainer__LogoutButton {
         cursor: pointer;
         height: 31px;
-        width: auto;
+        width: 90px;
         transition: 0.3s all;
+        border: 1px solid rgba(90, 0, 207, 0.616);
           //@include flexRowCenterSpaceAround();
+          display: flex;
+          align-items: center;
           justify-content: center;
         &:hover {
           background: #c1c2e6;
@@ -83,13 +96,6 @@
           font-size: 14px;
           color: #070a1d;
         }
-      }
-      #countdown{
-          position: absolute;
-          bottom:2px;
-          right: 2px;
-          font-size: 1rem;
-          color: rgba($color: #000000, $alpha: 0.5)
       }
       .appPage__LogoAndLogout   {
         display: flex;
@@ -114,6 +120,7 @@
     border: 1px solid #cbccce;
     margin: 9px;
 
+
     img{
         max-width: 20px;
     }
@@ -122,12 +129,17 @@
         display: flex;
         justify-content: space-between;
         padding: 2px 4px 2px 2px;
+
     }
 
     .gameBoard__side{
         display: flex;
     }
+    .gameBoard__title{
+        padding-left: 5px;
+    }
 }
+
 
 .container__title{
 
@@ -136,16 +148,149 @@
    
 }
 .conferences{
-    display: flex;
+
     max-width: 600px;
-    justify-content: space-evenly;
+
     margin: 0 auto;
     padding: 10px;
     font-size: 1rem;
+    //font-family: Roboto, sans-serif;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1;
+    font-weight: 300;
+    
+
+    table{
+        border-spacing: 0;
+        th{
+            font-size:10px;
+        }
+        td{
+            min-width:50px;
+            text-align: center;
+            border-right: 1px solid rgba(0,0,0, 0.3)
+        }
+    }
+    h3{
+        text-align: center;
+    }
+    .conferences__east{
+        width:350px;
+        overflow-x: scroll;
+        margin: 0 auto;
+        overflow-y: hidden;
+    }
+    .conferences__west{
+        width:350px;
+        overflow-x: scroll;
+        margin: 0 auto;
+        overflow-y: hidden;
+    }
+    .conferences__row{
+        position: relative;
+    }
+    .conferences__eastTeam{
+        position: absolute;
+        background: #fff;
+        padding-right:5px;
+        width: 120px;
+        height: 16px;
+        text-align: right;
+        border: none;
+    }
+    .conferences__westTeam{
+        position: absolute;
+        background: #fff;
+        padding-right:5px;
+        width: 120px;
+        height: 16px;
+        text-align: right;
+        border: none; 
+    }
+    .conferences__win{
+        padding-left: 127px;
+        border-left: 1px solid rgba(0,0,0, 0.3);
+    }
+
 }
 
-.conferences__west{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-}
+.spinner {
+    color: #c52020;
+    font-size: 90px;
+    text-indent: -9999em;
+    overflow: hidden;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    margin: 72px auto;
+    position: relative;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-animation: load6 1.7s infinite ease, round 1.7s infinite ease;
+    animation: load6 1.7s infinite ease, round 1.7s infinite ease;
+  }
+  @-webkit-keyframes load6 {
+    0% {
+      box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
+    5%,
+    95% {
+      box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
+    10%,
+    59% {
+      box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
+    }
+    20% {
+      box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
+    }
+    38% {
+      box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em, -0.82em -0.09em 0 -0.477em;
+    }
+    100% {
+      box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
+  }
+  @keyframes load6 {
+    0% {
+      box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
+    5%,
+    95% {
+      box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
+    10%,
+    59% {
+      box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
+    }
+    20% {
+      box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
+    }
+    38% {
+      box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em, -0.82em -0.09em 0 -0.477em;
+    }
+    100% {
+      box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
+  }
+  @-webkit-keyframes round {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes round {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
