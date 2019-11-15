@@ -69,12 +69,14 @@ const App = (props) => {
     return(
         <div className="appPage">
             <nav className="appPage__NavigationContainer">
-                <h3>Welcome, {name}</h3>
                 <div className="appPage__LogoAndLogout">
                     <h1>NBA</h1>
-                    <div className="navContainer__LogoutButton" onClick={handleLogout}>
-                        <SvgIcon icon={"logout"} />
-                        <span>Logout</span>
+                    <div>
+                        <span style={{fontSize:12}}>{name}</span>
+                        <div className="navContainer__LogoutButton" onClick={handleLogout}>
+                            <SvgIcon icon={"logout"} />
+                            <span>Logout</span>
+                        </div>
                     </div>
                     
                 </div>
