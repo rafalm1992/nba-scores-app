@@ -59,6 +59,17 @@ body{
         align-items: center;
         justify-content: center;
         flex-direction: column;
+
+        iframe{
+          width: 700px;
+          height: 420px;
+        }
+        @media screen and (max-width:630px){
+          iframe{
+          width: 350px;
+          height: 197px;
+          }
+        }
     }
     .topPlays{
         display: flex;
@@ -149,12 +160,12 @@ body{
 }
 .conferences{
 
-    max-width: 600px;
+    max-width: 630px;
 
     margin: 0 auto;
-    padding: 10px;
+
     font-size: 1rem;
-    //font-family: Roboto, sans-serif;
+
     font-family: 'Poppins', sans-serif;
     line-height: 1;
     font-weight: 300;
@@ -164,27 +175,51 @@ body{
         border-spacing: 0;
         th{
             font-size:10px;
+            line-height: 2;
+        }
+        th:hover{
+          text-decoration-line: underline;
+          cursor: pointer;
         }
         td{
             min-width:50px;
             text-align: center;
             border-right: 1px solid rgba(0,0,0, 0.3)
         }
+
+        .inactive:hover{
+          text-decoration: none;
+          cursor: initial;
+        }
     }
     h3{
         text-align: center;
     }
     .conferences__east{
-        width:350px;
+        width:300px;
         overflow-x: scroll;
         margin: 0 auto;
         overflow-y: hidden;
     }
     .conferences__west{
-        width:350px;
+        width:300px;
         overflow-x: scroll;
         margin: 0 auto;
         overflow-y: hidden;
+    }
+    @media screen and (min-width: 400px){
+      .conferences__east{
+        width:auto;
+        overflow-x: auto;
+        margin: 0 auto;
+        overflow-y: hidden;
+    }
+    .conferences__west{
+        width:auto;
+        overflow-x: auto;
+        margin: 0 auto;
+        overflow-y: hidden;
+    }
     }
     .conferences__row{
         position: relative;
@@ -193,7 +228,7 @@ body{
         position: absolute;
         background: #fff;
         padding-right:5px;
-        width: 120px;
+        width: 100px;
         height: 15px;
         text-align: right;
         border: none;
@@ -202,14 +237,14 @@ body{
         position: absolute;
         background: #fff;
         padding-right:5px;
-        width: 120px;
+        width: 100px;
         height: 15px;
         text-align: right;
         border: none; 
     }
     .conferences__win{
-        padding-left: 127px;
-        border-left: 1px solid rgba(0,0,0, 0.3);
+        padding-left: 100px;
+      
     }
 
 }

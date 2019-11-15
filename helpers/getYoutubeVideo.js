@@ -16,7 +16,6 @@ const getYoutubeVideoDataJson = (query) => {
             await videos[0].click()
             await page.waitForSelector('.html5-video-container')
             await page.waitFor(500)
-            await page.waitFor(1000)
             let url = await page.evaluate('document.URL')
             let title = await page.evaluate('document.title.slice(0, document.title.length-10)')
             await page.waitFor(300)

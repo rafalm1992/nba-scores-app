@@ -4,14 +4,11 @@ import InputElement from '../../Inputs/InputElement'
 import ButtonElement from '../../Buttons/ButtonElement'
 
 const LoginForm = (props) => {
-    const [email, setEmail] = useState("rafalek@rafalek.com");
-    const [password, setPassword] = useState('qazwsx777')//useState("hell5445oooo");
+    const [email, setEmail] = useState('rafalek@rafalek.com');
+    const [password, setPassword] = useState('qazwsx777')
     const [errorMessage, setErrorMessage] = useState({email:false, password:false, all: false})
     const [isSubmiting, setIsSubmiting] = useState(false)
-    // useEffect(()=>{
-    //     setEmail('')
-    //     setPassword('')
-    // }, [])  
+
 
     const validateEmail = (email) => {
         var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -21,7 +18,6 @@ const LoginForm = (props) => {
         e.preventDefault()
             setIsSubmiting(true)
             if(email === "" || password === "" || !validateEmail(email)){
-                console.log('smosss')
                 setErrorMessage({email: !e.target.elements[0].value ? "Email can't be empty" : !validateEmail(email) ? 'Email is not valid' : null , password: !e.target.elements[1].value && "Password can't be empty"} )
                 setIsSubmiting(false)
                 return
@@ -41,16 +37,12 @@ const LoginForm = (props) => {
             }
           })
             .then(res => {
-                console.log(res)
                 localStorage.setItem("b", res.data);
             })
             .then((data) => {
-                console.log(data, 'data')
               setEmail("");
               setPassword("");
-              console.log(props)
               setIsSubmiting(false)
-              
               props.pushToApp();
             })
             .catch(err => {
