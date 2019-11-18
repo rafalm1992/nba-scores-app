@@ -19,17 +19,17 @@ NBA data fetching from http://data.nba.net/10s/prod/v1/today.json using <b>Axios
 
 Getting NBA top 10 latest video from Youtube using <b>Puppeteer</b>
 
-App is <b>responsive</b> and styled with <b>CSS3</b> and <b>SASS<b/>
+App is <b>responsive</b> and styled with <b>CSS3</b> and <b>SASS</b>
 
 <br/>
 
-Check out how app does work https://nba-rafal-app.herokuapp.com/
+Check out how does it work:  https://nba-rafal-app.herokuapp.com/
 
 <br/>
 You can use this credentials for testing purpose:
 <br/>
-email: test@test.com
+<b>email:</b> test@test.com
 <br/>
-pass: testtest
+<b>pass:</b> testtest
 <br><br/>
 
