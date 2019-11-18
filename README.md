@@ -7,7 +7,7 @@ This is React, Node.js, Express, MongoDB based singe page app (MERN stack) where
 
 <br/>
 
-<b>Authentication</b> and <b>authorization</b> are made using <b>JSON Web Token (JWT)</b>
+<b>Authentication</b> and <b>authorization</b> are made using <b>JSON Web Token (JWT)</b> (session/token expiring time is visible in the bottom right)
 
 <b>Routing</b> between login/register and main app pages is made with <b>React-router-dom</b>
 
