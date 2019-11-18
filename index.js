@@ -13,9 +13,8 @@ dotenv.config()
 
 const port = process.env.PORT || 4444
 
-mongoose.connect('mongodb+srv://admin1999:NLeOb8niv68FBcAW@cluster0-lc1yd.mongodb.net/allUsers?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true }, (err)=>{
+mongoose.connect(process.env.MONGO_CONENCT, { useNewUrlParser: true, useUnifiedTopology: true }, (err)=>{
     if(err)throw err;
-    console.log('connected to db')
 })
 
 //Middleware
