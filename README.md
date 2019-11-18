@@ -13,6 +13,8 @@ This is React, Node.js, Express, MongoDB based singe page app (MERN stack) where
 
 React project is bundled with <b>Webpack</b>
 
+In case of forgotten password, new one is being send with <b>Nodemailer</b>
+
 NBA data fetching from http://data.nba.net/10s/prod/v1/today.json using <b>Axios</b>
 
 Getting NBA top 10 latest video from Youtube using <b>Puppeteer</b>
