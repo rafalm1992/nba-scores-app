@@ -18,4 +18,7 @@ Getting NBA top 10 latest video from Youtube using Puppeteer
 
 Check out how app does work https://nba-rafal-app.herokuapp.com/
 
+You can use this credentials for testing purpose:
+email: test@test.com
+pass: testtest
 
