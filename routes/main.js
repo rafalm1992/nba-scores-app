@@ -3,16 +3,18 @@ const verify = require('./verifyToken')
 const {getYoutubeVideoDataJson} = require('../helpers/getYoutubeVideo')
 const axios = require('axios')
 
-const getDate = (current = -1) => {
+const getDate = () => {
     let date = new Date()
+    let current = date.getUTCHours() < 6 ? -2 : -1
     date.setDate(date.getDate() + current);
     let day = (date.getDate() < 10 ? `0${date.getDate()}` : `${date.getDate()}`) 
     let month = (date.getMonth() + 1 < 10 ? `0${date.getMonth()+1}` : `${date.getMonth()+1}`)
     let year = date.getFullYear()
     return `${year}${month}${day}`
 }
-const getDateString = (current = -1) => {
+const getDateString = () => {
     let date = new Date()
+    let current = date.getUTCHours() < 6 ? -2 : -1
     date.setDate(date.getDate() + current);
     let day = (date.getDate() < 10 ? `0${date.getDate()}` : `${date.getDate()}`) 
     let month

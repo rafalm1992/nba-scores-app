@@ -1,331 +1,248 @@
-body{
-    margin: 0;
-    padding: 0;
+body {
+  margin: 0;
+  padding: 0;
 }
-.appPage{
-    height: 100vh;
+.appPage {
+  height: 100vh;
+  width: 100%;
+
+  footer {
     width: 100%;
-
-    footer{
-        width: 100%;
-        margin: 0 auto;
-        font-weight: 200;
-        font-family: 'Poppins', sans-serif;
-        position: fixed;
-        bottom: 0;
-        background: #fff;
-        display: flex;
-        justify-content: space-between;
-
-        #countdown{
-            right: 2px;
-            color: rgba($color: #000000, $alpha: 0.5)
-        }
-    }
-
-    h1{
-        font-size: 4rem;
-        font-weight: 200;
-        text-align: center;
-    }
-    
-    .appPage__NavigationContainer{
-        max-width: 450px;
-        margin: 0 auto;
-    }
-
-    .appPage__NavigationList{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        align-items: center;
-        background: rgb(8,0,255);
-        background: linear-gradient(90deg, rgba(8,0,255,0.4) 23%, rgba(255,0,1,0.4) 76%);
-        span {
-            cursor: pointer;
-            padding: 5px 10px 5px 10px;
-            border-radius: 4px;
-            &:hover{
-                font-weight: 700;
-            }
-        }
-
-        .active{
-            font-weight: 700;
-        }
-    }
-    .topPlaysContainer{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-
-        iframe{
-          width: 700px;
-          height: 420px;
-        }
-        @media screen and (max-width:630px){
-          iframe{
-          width: 350px;
-          height: 197px;
-          }
-        }
-    }
-    .topPlays{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        @media screen and(max-width: 440px) {
-            width:350px;
-            img{
-                width:300px
-            }
-        }
-        h1,h3{
-            text-align: center;
-            margin:25px 0 25px 0;
-        }
-    }
-    .navContainer__LogoutButton {
-        cursor: pointer;
-        height: 31px;
-        width: 90px;
-        transition: 0.3s all;
-        border: 1px solid rgba(90, 0, 207, 0.616);
-          //@include flexRowCenterSpaceAround();
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        &:hover {
-          background: #c1c2e6;
-          transition: 0.3s all;
-        }
-        & span {
-          margin-left: 8px;
-          margin-right: 8px;
-          font-size: 14px;
-          color: #070a1d;
-        }
-      }
-      .appPage__LogoAndLogout   {
-        display: flex;
-        align-items: center;
-        justify-content: space-around;   
-    }
-}
-
-.scoreBoard{
-    max-width: 280px;
     margin: 0 auto;
-    font: 16px -apple-system,BlinkMacSystemFont,"Roboto","Arial","Helvetica Neue","Helvetica",sans-serif;
-
-    .scoreBoard__Header, .scoreBoard__CurrentDay{
-        margin: 9px;
-    }
-}
-.gameBoard{
-    height: auto;
-    width: auto;
+    font-weight: 200;
+    font-family: "Poppins", sans-serif;
+    position: fixed;
+    bottom: 0;
     background: #fff;
-    border: 1px solid #cbccce;
-    margin: 9px;
+    display: flex;
+    justify-content: space-between;
 
-
-    img{
-        max-width: 20px;
+    #countdown {
+      right: 2px;
+      color: rgba($color: #000000, $alpha: 0.5);
     }
+  }
 
-    .gameBoard__container {
-        display: flex;
-        justify-content: space-between;
-        padding: 2px 4px 2px 2px;
+  h1 {
+    font-size: 4rem;
+    font-weight: 200;
+    text-align: center;
+  }
 
-    }
-
-    .gameBoard__side{
-        display: flex;
-    }
-    .gameBoard__title{
-        padding-left: 5px;
-    }
-}
-
-
-.container__title{
-
-        text-align: center;
-        margin:25px 0 25px 0;
-   
-}
-.conferences{
-
-    max-width: 630px;
-
+  .appPage__NavigationContainer {
+    max-width: 450px;
     margin: 0 auto;
+  }
 
-    font-size: 1rem;
-
-    font-family: 'Poppins', sans-serif;
-    line-height: 1;
-    font-weight: 300;
-    
-
-    table{
-        border-spacing: 0;
-        th{
-            font-size:10px;
-            line-height: 2;
-        }
-        th:hover{
-          text-decoration-line: underline;
-          cursor: pointer;
-        }
-        td{
-            min-width:50px;
-            text-align: center;
-            border-right: 1px solid rgba(0,0,0, 0.3)
-        }
-
-        .inactive:hover{
-          text-decoration: none;
-          cursor: initial;
-        }
-    }
-    h3{
-        text-align: center;
-    }
-    .conferences__east{
-        width:300px;
-        overflow-x: scroll;
-        margin: 0 auto;
-        overflow-y: hidden;
-    }
-    .conferences__west{
-        width:300px;
-        overflow-x: scroll;
-        margin: 0 auto;
-        overflow-y: hidden;
-    }
-    @media screen and (min-width: 400px){
-      .conferences__east{
-        width:auto;
-        overflow-x: auto;
-        margin: 0 auto;
-        overflow-y: hidden;
-    }
-    .conferences__west{
-        width:auto;
-        overflow-x: auto;
-        margin: 0 auto;
-        overflow-y: hidden;
-    }
-    }
-    .conferences__row{
-        position: relative;
-    }
-    .conferences__eastTeam{
-        position: absolute;
-        background: #fff;
-        padding-right:5px;
-        width: 100px;
-        height: 15px;
-        text-align: right;
-        border: none;
-    }
-    .conferences__westTeam{
-        position: absolute;
-        background: #fff;
-        padding-right:5px;
-        width: 100px;
-        height: 15px;
-        text-align: right;
-        border: none; 
-    }
-    .conferences__win{
-        padding-left: 100px;
-      
+  .appPage__NavigationList {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    background: rgb(8, 0, 255);
+    background: linear-gradient(
+      90deg,
+      rgba(8, 0, 255, 0.4) 23%,
+      rgba(255, 0, 1, 0.4) 76%
+    );
+    span {
+      cursor: pointer;
+      padding: 5px 10px 5px 10px;
+      border-radius: 4px;
+      &:hover {
+        font-weight: 700;
+      }
     }
 
+    .active {
+      font-weight: 700;
+    }
+  }
+  .topPlaysContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    iframe {
+      width: 700px;
+      height: 420px;
+    }
+    @media screen and (max-width: 630px) {
+      iframe {
+        width: 350px;
+        height: 197px;
+      }
+    }
+  }
+  .topPlays {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    @media screen and(max-width: 440px) {
+      width: 350px;
+      img {
+        width: 300px;
+      }
+    }
+    h1,
+    h3 {
+      text-align: center;
+      margin: 25px 0 25px 0;
+    }
+  }
+  .navContainer__LogoutButton {
+    cursor: pointer;
+    height: 31px;
+    width: 90px;
+    transition: 0.3s all;
+    border: 1px solid rgba(90, 0, 207, 0.616);
+    //@include flexRowCenterSpaceAround();
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:hover {
+      background: #c1c2e6;
+      transition: 0.3s all;
+    }
+    & span {
+      margin-left: 8px;
+      margin-right: 8px;
+      font-size: 14px;
+      color: #070a1d;
+    }
+  }
+  .appPage__LogoAndLogout {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
 }
 
-.spinner {
-    color: #c52020;
-    font-size: 90px;
-    text-indent: -9999em;
-    overflow: hidden;
-    width: 1em;
-    height: 1em;
-    border-radius: 50%;
-    margin: 72px auto;
+.scoreBoard {
+  max-width: 280px;
+  margin: 0 auto;
+  font: 16px -apple-system, BlinkMacSystemFont, "Roboto", "Arial",
+    "Helvetica Neue", "Helvetica", sans-serif;
+
+  .scoreBoard__Header,
+  .scoreBoard__CurrentDay {
+    margin: 9px;
+  }
+}
+.gameBoard {
+  height: auto;
+  width: auto;
+  background: #fff;
+  border: 1px solid #cbccce;
+  margin: 9px;
+
+  img {
+    max-width: 20px;
+  }
+
+  .gameBoard__container {
+    display: flex;
+    justify-content: space-between;
+    padding: 2px 4px 2px 2px;
+  }
+
+  .gameBoard__side {
+    display: flex;
+  }
+  .gameBoard__title {
+    padding-left: 5px;
+  }
+}
+
+.container__title {
+  text-align: center;
+  margin: 25px 0 25px 0;
+}
+.conferences {
+  max-width: 630px;
+
+  margin: 0 auto;
+
+  font-size: 1rem;
+
+  font-family: "Poppins", sans-serif;
+  line-height: 1;
+  font-weight: 300;
+
+  table {
+    border-spacing: 0;
+    th {
+      font-size: 10px;
+      line-height: 2;
+    }
+    th:hover {
+      text-decoration-line: underline;
+      cursor: pointer;
+    }
+    td {
+      min-width: 50px;
+      text-align: center;
+      border-right: 1px solid rgba(0, 0, 0, 0.3);
+    }
+
+    .inactive:hover {
+      text-decoration: none;
+      cursor: initial;
+    }
+  }
+  h3 {
+    text-align: center;
+  }
+  .conferences__east {
+    width: 300px;
+    overflow-x: scroll;
+    margin: 0 auto;
+    overflow-y: hidden;
+  }
+  .conferences__west {
+    width: 300px;
+    overflow-x: scroll;
+    margin: 0 auto;
+    overflow-y: hidden;
+  }
+  @media screen and (min-width: 400px) {
+    .conferences__east {
+      width: auto;
+      overflow-x: auto;
+      margin: 0 auto;
+      overflow-y: hidden;
+    }
+    .conferences__west {
+      width: auto;
+      overflow-x: auto;
+      margin: 0 auto;
+      overflow-y: hidden;
+    }
+  }
+  .conferences__row {
     position: relative;
-    -webkit-transform: translateZ(0);
-    -ms-transform: translateZ(0);
-    transform: translateZ(0);
-    -webkit-animation: load6 1.7s infinite ease, round 1.7s infinite ease;
-    animation: load6 1.7s infinite ease, round 1.7s infinite ease;
   }
-  @-webkit-keyframes load6 {
-    0% {
-      box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
-    }
-    5%,
-    95% {
-      box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
-    }
-    10%,
-    59% {
-      box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
-    }
-    20% {
-      box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
-    }
-    38% {
-      box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em, -0.82em -0.09em 0 -0.477em;
-    }
-    100% {
-      box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
-    }
+  .conferences__eastTeam {
+    position: absolute;
+    background: #fff;
+    padding-right: 5px;
+    width: 100px;
+    height: 15px;
+    text-align: right;
+    border: none;
   }
-  @keyframes load6 {
-    0% {
-      box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
-    }
-    5%,
-    95% {
-      box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
-    }
-    10%,
-    59% {
-      box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
-    }
-    20% {
-      box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
-    }
-    38% {
-      box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em, -0.82em -0.09em 0 -0.477em;
-    }
-    100% {
-      box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
-    }
+  .conferences__westTeam {
+    position: absolute;
+    background: #fff;
+    padding-right: 5px;
+    width: 100px;
+    height: 15px;
+    text-align: right;
+    border: none;
   }
-  @-webkit-keyframes round {
-    0% {
-      -webkit-transform: rotate(0deg);
-      transform: rotate(0deg);
-    }
-    100% {
-      -webkit-transform: rotate(360deg);
-      transform: rotate(360deg);
-    }
+  .conferences__win {
+    padding-left: 100px;
   }
-  @keyframes round {
-    0% {
-      -webkit-transform: rotate(0deg);
-      transform: rotate(0deg);
-    }
-    100% {
-      -webkit-transform: rotate(360deg);
-      transform: rotate(360deg);
-    }
-  }
+}

@@ -1,42 +1,42 @@
-.buttonElement{
+.buttonElement {
+  margin: 5px 0 5px 0;
+  width: 360px;
+  height: 56px;
+  border-radius: 5px;
+  text-decoration: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  background: #3394d5;
+  color: white;
+  outline: none;
+  border: none;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+
+  &:hover {
+    background: darken($color: #3394d5, $amount: 10);
+  }
+  &:focus {
+    outline: none;
+    border: none;
+  }
+  &--disabled {
     margin: 5px 0 5px 0;
     width: 360px;
     height: 56px;
     border-radius: 5px;
     text-decoration: none;
-	border: none;
-	padding: 0;
-	font: inherit;
-	cursor: pointer;
-    background: #3394d5;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
     color: white;
     outline: none;
     border: none;
     font-weight: 400;
-    font-family: 'Poppins', sans-serif;
-
-    &:hover{
-        background: darken($color: #3394d5, $amount: 10);   
-    }
-    &:focus{
-        outline: none;
-        border: none;
-    }
-    &--disabled{
-        margin: 5px 0 5px 0;
-        width: 360px;
-        height: 56px;
-        border-radius: 5px;
-        text-decoration: none;
-        border: none;
-        padding: 0;
-        font: inherit;
-        cursor: pointer;
-        color: white;
-        outline: none;
-        border: none;
-        font-weight: 400;
-        font-family: 'Poppins', sans-serif;
-        background: #a5afb6;
-    }
+    font-family: "Poppins", sans-serif;
+    background: #a5afb6;
+  }
 }
